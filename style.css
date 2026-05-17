@@ -1,13 +1,13 @@
 :root {
-  --bg: #f4f5f7;
-  --ink: #17191f;
-  --muted: #727989;
+  --bg: #f6f7f9;
+  --ink: #11151c;
+  --muted: #687386;
   --orange: #ff5a1f;
-  --orange-dark: #de3f12;
+  --orange-dark: #c94317;
   --green: #1f9d68;
-  --line: #e4e7ee;
+  --line: #e7ebf1;
   --card: #ffffff;
-  --shadow: 0 14px 34px rgba(20, 24, 32, 0.14);
+  --shadow: 0 10px 26px rgba(20, 24, 32, 0.1);
 }
 
 * {
@@ -43,12 +43,11 @@ button {
   display: grid;
   grid-template-rows: auto auto auto auto 1fr auto;
   background:
-    radial-gradient(circle at 18% -4%, rgba(255, 90, 31, 0.24), transparent 34%),
-    linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+    linear-gradient(180deg, #fffaf7 0%, #ffffff 28%, var(--bg) 100%);
 }
 
 .top {
-  padding: 22px 18px 10px;
+  padding: 20px 16px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +68,8 @@ h2 {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 38px;
+  letter-spacing: -0.5px;
 }
 
 h2 {
@@ -81,7 +81,7 @@ h2 {
   width: 48px;
   height: 48px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 15px;
   background: var(--ink);
 }
 
@@ -122,11 +122,12 @@ h2 {
 }
 
 .search-card {
-  margin: 0 18px 12px;
+  margin: 0 16px 12px;
   padding: 10px 14px;
-  border-radius: 18px;
+  border-radius: 16px;
   background: var(--card);
-  box-shadow: 0 8px 22px rgba(20, 24, 32, 0.08);
+  border: 1px solid var(--line);
+  box-shadow: none;
 }
 
 .search-card label {
@@ -149,9 +150,9 @@ h2 {
 
 .categories {
   display: flex;
-  gap: 9px;
+  gap: 8px;
   overflow-x: auto;
-  padding: 0 18px 12px;
+  padding: 0 16px 12px;
   scrollbar-width: none;
 }
 
@@ -163,7 +164,7 @@ h2 {
   flex: 0 0 auto;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 9px 13px;
+  padding: 9px 12px;
   background: #fff;
   color: var(--muted);
   font-weight: 800;
@@ -177,17 +178,17 @@ h2 {
 }
 
 .deal {
-  margin: 0 18px 12px;
-  min-height: 112px;
+  margin: 0 16px 12px;
+  min-height: 92px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
   align-items: center;
-  padding: 18px;
-  border-radius: 22px;
+  padding: 15px;
+  border-radius: 18px;
   background:
-    linear-gradient(135deg, rgba(23, 25, 31, 0.95), rgba(65, 29, 14, 0.94)),
-    radial-gradient(circle at right, rgba(255, 90, 31, 0.7), transparent 55%);
+    linear-gradient(135deg, #151922, #2a1a14),
+    radial-gradient(circle at right, rgba(255, 90, 31, 0.6), transparent 55%);
   color: #fff;
   box-shadow: var(--shadow);
 }
@@ -201,49 +202,58 @@ h2 {
 .deal strong {
   display: block;
   margin-top: 4px;
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.05;
 }
 
 .deal p {
   margin: 6px 0 0;
   color: rgba(255, 255, 255, 0.74);
   font-size: 13px;
+  line-height: 1.25;
 }
 
 .small-buy {
   border: 0;
   border-radius: 14px;
-  padding: 11px 14px;
+  min-width: 64px;
+  height: 44px;
+  padding: 0 15px;
   background: #fff;
   color: var(--orange-dark);
   font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .products {
   min-height: 0;
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
-  padding: 0 18px 96px;
+  padding: 0 16px 112px;
 }
 
 .product {
-  min-height: 220px;
-  padding: 12px;
+  min-height: 156px;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 12px 10px 10px;
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 18px;
   background: var(--card);
-  box-shadow: 0 8px 20px rgba(20, 24, 32, 0.08);
+  box-shadow: 0 8px 18px rgba(20, 24, 32, 0.06);
 }
 
 .art {
-  height: 100px;
-  border-radius: 16px;
-  margin-bottom: 10px;
+  height: 132px;
+  border-radius: 15px;
+  margin-bottom: 0;
   position: relative;
   overflow: hidden;
-  background: #f0f2f6;
+  background: linear-gradient(145deg, #f4f7fb, #e6ebf2);
   display: grid;
   place-items: center;
 }
@@ -261,8 +271,8 @@ h2 {
 .art img {
   position: relative;
   z-index: 2;
-  width: 86%;
-  height: 86%;
+  width: 94%;
+  height: 94%;
   object-fit: contain;
   filter: drop-shadow(0 14px 10px rgba(20, 24, 32, 0.22));
 }
@@ -362,16 +372,17 @@ h2 {
 }
 
 .product h3 {
-  margin: 0 0 5px;
-  font-size: 15px;
+  margin: 3px 0 5px;
+  font-size: 16px;
   line-height: 1.15;
 }
 
 .product p {
-  min-height: 31px;
+  min-height: 36px;
   margin: 0 0 10px;
   color: var(--muted);
   font-size: 12px;
+  line-height: 1.25;
 }
 
 .buy-row {
@@ -379,35 +390,54 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  margin-top: auto;
 }
 
 .price {
   font-weight: 900;
+  font-size: 16px;
+  color: #080b10;
 }
 
 .buy {
   border: 0;
-  border-radius: 12px;
-  padding: 9px 11px;
-  background: var(--ink);
+  border-radius: 13px;
+  min-width: 64px;
+  height: 42px;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #11151c, #252b36);
   color: #fff;
   font-weight: 900;
+  font-size: 15px;
+  box-shadow: 0 8px 16px rgba(17, 21, 28, 0.2);
+}
+
+.buy:active,
+.small-buy:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1px 0 2px;
 }
 
 .bottom-nav {
   position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 14px;
-  height: 64px;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  height: 58px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   padding: 8px;
   border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 12px 30px rgba(20, 24, 32, 0.18);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 26px rgba(20, 24, 32, 0.14);
   backdrop-filter: blur(12px);
 }
 
@@ -418,6 +448,7 @@ h2 {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
+  white-space: nowrap;
 }
 
 .bottom-nav button.active {
@@ -442,7 +473,7 @@ h2 {
 }
 
 .sheet {
-  max-height: 76%;
+  max-height: 68%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   border-radius: 28px 28px 0 0;
@@ -518,10 +549,13 @@ h2 {
 .checkout button {
   border: 0;
   border-radius: 16px;
-  padding: 14px 20px;
+  min-width: 126px;
+  height: 52px;
+  padding: 0 20px;
   background: var(--orange);
   color: #fff;
   font-weight: 900;
+  font-size: 16px;
 }
 
 .toast {
@@ -542,14 +576,25 @@ h2 {
 
 @media (max-height: 760px) {
   .deal {
+    min-height: 78px;
+    padding: 12px 14px;
+  }
+
+  .deal p {
     display: none;
   }
 
+  .small-buy {
+    height: 40px;
+    min-width: 60px;
+  }
+
   .product {
-    min-height: 196px;
+    min-height: 146px;
+    grid-template-columns: 116px minmax(0, 1fr);
   }
 
   .art {
-    height: 84px;
+    height: 126px;
   }
 }
