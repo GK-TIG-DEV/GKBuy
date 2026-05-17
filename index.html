@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>GKBAY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="phone-app" aria-label="GKBAY marketplace">
+    <section class="top">
+      <div>
+        <p class="eyebrow">GKBAY</p>
+        <h1>Rynek gracza</h1>
+      </div>
+      <button class="cart-btn" id="openCart" aria-label="Koszyk">
+        <span id="cartCount">0</span>
+      </button>
+    </section>
+
+    <section class="search-card">
+      <label for="search">Szukaj</label>
+      <input id="search" type="search" placeholder="air force, ifrut, ipods, merol..." autocomplete="off" />
+    </section>
+
+    <nav class="categories" aria-label="Kategorie">
+      <button class="category active" data-category="all">Wszystko</button>
+      <button class="category" data-category="shoes">Buty</button>
+      <button class="category" data-category="tech">Elektronika</button>
+      <button class="category" data-category="cars">Motoryzacja</button>
+      <button class="category" data-category="style">Styl</button>
+    </nav>
+
+    <section class="deal">
+      <div>
+        <span>Promka dnia</span>
+        <strong>Merol AMG pakiet</strong>
+        <p>Dostawa pod garaż, faktura RP, bez kręcenia licznika.</p>
+      </div>
+      <button class="small-buy" data-quick="merol-amg">Kup</button>
+    </section>
+
+    <section class="products" id="products" aria-label="Produkty"></section>
+
+    <nav class="bottom-nav" aria-label="Dolna nawigacja">
+      <button class="active">Home</button>
+      <button id="ordersBtn">Zakupy</button>
+      <button id="favBtn">Ulubione</button>
+      <button id="profileBtn">Profil</button>
+    </nav>
+
+    <aside class="cart-sheet" id="cartSheet" aria-label="Koszyk" aria-hidden="true">
+      <div class="sheet">
+        <header>
+          <div>
+            <p class="eyebrow">Koszyk</p>
+            <h2>Twoje zamówienie</h2>
+          </div>
+          <button id="closeCart" aria-label="Zamknij">×</button>
+        </header>
+        <div class="cart-list" id="cartList"></div>
+        <div class="checkout">
+          <div>
+            <span>Razem</span>
+            <strong id="cartTotal">$0</strong>
+          </div>
+          <button id="checkoutBtn">Kup teraz</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="toast hidden" id="toast">Dodano do koszyka</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
